@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #a1{width:300px;
+        height: 300px;
+        border: 2px solid black;
+        }
+        a{display:block;
+            width: 100px;
+        height: 50px;
+            line-height: 50px;
+        float: left;
+            text-align: center;
+            background-color: pink;
+            color:white;
+            text-decoration: none;
+        }
+        #a1 div{width:300px;
+            height:250px;
+            text-align: center;
+            line-height: 200px;
+            clear: both;
+            display: none;
+            font-size: 50px;
+            background-color: red;
+        }
+        #a1 a.active{background-color:yellow;}
+    </style>
+</head>
+<body>
+<div id="a1">
+    <a href="javascript:;" class="active" title="1">按钮1</a>
+    <a href="javascript:;" title="2">按钮2</a>
+    <a href="javascript:;" title="3">按钮3</a>
+    <div>大</div>
+    <div>中</div>
+    <div>小</div>
+</div>
+<script>
+    var oa1 = document.getElementById("a1");
+    var obtn = oa1.getElementsByTagName("a");
+    var odiv = oa1.getElementsByTagName("div");
+
+    window.onload = function(){
+        for(var i=0; i<obtn.length; i++){
+            obtn[i].onclick = function(){
+                for(var i=0;i<obtn.length;i++){
+                    obtn[i].className = "";
+                }
+                this.className = "active";
+                for (var i=0; i<odiv.length;i++){
+                    odiv[i].style.display = "none";
+                }
+                odiv[this.title].style.display = "block";
+            }
+        }
+    }
+
+    </script>
+</body>
+</html>

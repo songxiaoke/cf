@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,html,ul{margin:0; padding:0;}
+        #box{width:300px;
+        border: 1px solid black;}
+        ul{list-style-type: none;
+        margin:0 auto;
+        }
+        .odd{background-color: palevioletred;}
+        .even{background-color:yellow;}
+        li{text-align: center;
+        cursor: pointer;
+        }
+        </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>夜玫瑰</li>
+        <li>猎狐</li>
+        <li>飞虎队</li>
+        <li>刀锋</li>
+        <li>黑鹰</li>
+        <li>霉霉</li>
+        <li>G E M</li>
+        <li>J FLA</li>
+        <li>张傲雪</li>
+        <li>陆云</li>
+        </ul>
+    </div>
+<script>
+    var lis = document.getElementsByTagName("li");
+    var div = document.getElementsByTagName("div")[0];
+    for(i=0; i<lis.length;i++){
+        if(i%2==0){
+            lis[i].className="odd";
+        }else{
+            lis[i].className="even";
+        }
+        lis[i].onmouseover = function(){
+            this.style.backgroundColor = "green";
+        }
+        lis[i].onmouseout = function(){
+            this.style.backgroundColor = "";
+        }
+    }
+    </script>
+</body>
+</html>
